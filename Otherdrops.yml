@@ -18,7 +18,7 @@ otherdrops:
       - drop: DEFAULT
       - drop: MONSTER_EGG@THIS/1%
         message: "&aThis creature dropped a &9MONSTER EGG&a!!&f"
-# ANI-FARM
+# ANTI-FARM
       - tool: [DAMAGE_FALL, DAMAGE_DROWNING]
         drop: NOTHING
         flags: UNIQUE
@@ -51,6 +51,8 @@ otherdrops:
     ENDERMITE:
 
     GHAST:
+
+    GIANT:
 
     GUARDIAN:
 
