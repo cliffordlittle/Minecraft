@@ -1,188 +1,22 @@
-Aliases:
+# Auto detect text files and perform LF normalization
+* text=auto
 
-# DROP GROUPS
-  - &xppot
-    dropgroup: Xp Potion
-    drops:
-      - drop: 384/1%
-        message: "&aThe monster dropped an &9Xp Potion&a!&f"
+# Custom for Visual Studio
+*.cs     diff=csharp
+*.sln    merge=union
+*.csproj merge=union
+*.vbproj merge=union
+*.fsproj merge=union
+*.dbproj merge=union
 
-otherdrops:
-
-    PLAYER:
-#     - *xppot
-      - drop: ZOMBIE/50%
-        time: DARKNESS
-
-    ANY_CREATURE:
-      - drop: DEFAULT
-      - drop: MONSTER_EGG@THIS/1%
-        message: "&aThis creature dropped a &9MONSTER EGG&a!!&f"
-# ANI-FARM
-      - tool: [DAMAGE_FALL, DAMAGE_DROWNING]
-        drop: NOTHING
-        flags: UNIQUE
-      - trigger: mobspawn
-        spawnedby: spawner
-        drop: {NOTHING/80%, DEFAULT/20%}
-        world: world
-# NOTHING WILL DROP FROM ANY CREATURES WHILE IN CREATIVE WORLD
-      - drop: NOTHING
-        world: creative
-# EVERYTHING IN THE NETHER IS IMMUNE TO FIRE (FOR CUSTOM MOBS)
-      - trigger: hit
-        tool: DAMAGE_BURN
-        drop: DENY
-        world: world_nether
-
-#ALL MOBS, AND RESPECTIVE CATEGORIES
-
-#-=-=-=-=-=-=-=-=-=-HOSTILE MOBS
-    BLAZE:
-
-    CAVE_SPIDER:
-
-    CHICKEN_JOCKEY:
-
-    CREEPER:
-
-    CREEPER@POWERED:
-
-    ENDERMITE:
-
-    GHAST:
-
-    GUARDIAN:
-
-    MAGMA_CUBE:
-
-    SILVERFISH:
-
-    SKELETON:
-
-    SKELETON@WITHER:
-
-    SLIME:
-
-    SPIDER:
- 
-    SPIDER_JOCKEY:
-
-    WITCH:
-
-    WOLF@ANGRY:
-
-    ZOMBIE:
-
-    ZOMBIE@BABY:
-
-    ZOMBIE_VILLAGER:
-#-=-=-=-=-=-=-=-=-=-BOSS MOBS
-    ELDER_GUARDIAN:
-
-    ENDER_DRAGON:
-
-    KILLER_BUNNY:
-
-    WITHER:
-
-#-=-=-=-=-=-=-=-=-=-PASSIVE MOBS
-    BAT:
-
-    CHICKEN:
-
-    COW:
-
-    HORSE:
-
-    MOOSHROOM:
-
-    OCELOT:
-
-    PIG:
-
-    PIG@SADDLED:
-
-    RABBIT:
- 
-    SHEEP:
-
-    SQUID:
-
-    VILLAGER:
-
-    VILLAGER@BUTCHER:
-
-    VILLAGER@LIBRARIAN:
-
-    VILLAGER@PRIEST:
-
-    VILLAGER@BLACKSMITH:
-
-#-=-=-=-=-=-=-=-=-=-NEUTRAL MOBS
-    ENDERMAN:
-      - drop: CONTENTS
-
-    IRON_GOLEM:
-
-    SNOW_GOLEM:
-
-    WOLF:
-
-    WOLF@TAMED:
-
-    PIG_ZOMBIE:
-
-#ORES AND MISC FURTHER DOWN.  (Ores are set so that they cannot keep mining same ore for money)
-#AND ORES HAVE A SMALL CHANCE TO DROP THE ORE_BLOCK FOR FUN.
-
-    COAL_ORE:
-      - drop: COAL_ORE/10%
-        flag: UNIQUE
-
-    DIAMOND_ORE:
-      - drop: DIAMOND_ORE/10%
-        flag: UNIQUE
-
-    GLOWING_REDSTONE_ORE:
-      - drop: REDSTONE_ORE/10%
-        flag: UNIQUE
-
-    GLOWSTONE:
-      - drop: GLOWSTONE/10%
-        flag: UNIQUE
-
-    GOLD_ORE:
-      - drop: {GOLD_INGOT/90%, GOLD_ORE/10%}
-        flag: UNIQUE
-
-    IRON_ORE:
-      - drop: {IRON_INGOT/90%, IRON_ORE/10%}
-        flag: UNIQUE
-
-    LAPIS_ORE:
-      - drop: LAPIS_ORE/10%
-        flag: UNIQUE
-
-    REDSTONE_ORE:
-      - drop: REDSTONE_ORE/10%
-        flag: UNIQUE
-
-#MISC
-    BOAT:
-      - drop: BOAT
-
-    BOOKSHELF:
-      - drop: BOOKSHELF
-
-    GLASS:
-      - drop: GLASS
-
-    LEAVES:
-      - trigger: LEAF_DECAY
-        drop: [XP/5%, APPLE/1%]
-
-    MOB_SPAWNER:
-      - drop: DIAMOND_ORE
-      - drop: MONEY/100
-        message: "&aThank you for breaking the &9Spawner&a, You gain &6 %qg&a!&f"
+# Standard to msysgit
+*.doc	 diff=astextplain
+*.DOC	 diff=astextplain
+*.docx diff=astextplain
+*.DOCX diff=astextplain
+*.dot  diff=astextplain
+*.DOT  diff=astextplain
+*.pdf  diff=astextplain
+*.PDF	 diff=astextplain
+*.rtf	 diff=astextplain
+*.RTF	 diff=astextplain
