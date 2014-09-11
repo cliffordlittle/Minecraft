@@ -133,7 +133,7 @@ otherdrops:
 
     PIG_ZOMBIE:
 
-#ORES AND MISC FURTHER DOWN.  (Ores are set so that they cannot keep mining same ore for money)
+#ORES Ores are set so that they cannot keep mining same ore for money.
 #AND ORES HAVE A SMALL CHANCE TO DROP THE ORE_BLOCK FOR FUN.
 
     COAL_ORE:
