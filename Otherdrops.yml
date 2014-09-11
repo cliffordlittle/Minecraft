@@ -1,17 +1,17 @@
 Aliases:
 
 # DROP GROUPS
-  - &xppot
-    dropgroup: Xp Potion
+  - &treasure
+    dropgroup: Extra Treasures
     drops:
-      - drop: 384/1%
-        message: "&aThe monster dropped an &9Xp Potion&a!&f"
-
+# XP Potion,Healing Potion,Emerald,Diamond,Name Tag
+      - drop: {384/0.2%, 373:8229/0.2%, 388/0.2%, 264/0.2%, 421/0.2%}
+        message: "&aThe monster dropped something... &9Treasure&a!&f"
+#     - *treasure
 otherdrops:
 
     PLAYER:
-#     - *xppot
-      - drop: ZOMBIE/50%
+      - drop: {ZOMBIE/30%, SKELETON/30%}
         time: DARKNESS
 
     ANY_CREATURE:
@@ -20,7 +20,7 @@ otherdrops:
         message: "&aThis creature dropped a &9MONSTER EGG&a!!&f"
 # ANTI-FARM
       - tool: [DAMAGE_FALL, DAMAGE_DROWNING]
-        drop: NOTHING
+        drop: {NOTHING/80%, DEFAULT/20%}
         flags: UNIQUE
       - trigger: mobspawn
         spawnedby: spawner
@@ -45,8 +45,10 @@ otherdrops:
     CHICKEN_JOCKEY:
 
     CREEPER:
+      - drop: LIGHTNING@HARMLESS
 
     CREEPER@POWERED:
+      - drop: LIGHTNING@HARMLESS
 
     ENDERMITE:
 
@@ -75,10 +77,16 @@ otherdrops:
     WOLF@ANGRY:
 
     ZOMBIE:
+      - drop: SLIME@1/1-3/10%
+        weather: [RAIN, STORM]
 
     ZOMBIE@BABY:
+      - drop: SLIME@1/10%
+        weather: [RAIN, STORM]
 
     ZOMBIE_VILLAGER:
+      - drop: SLIME@1/1-3/10%
+        weather: [RAIN, STORM]
 #-=-=-=-=-=-=-=-=-=-BOSS MOBS
     ELDER_GUARDIAN:
 
@@ -90,8 +98,12 @@ otherdrops:
 
 #-=-=-=-=-=-=-=-=-=-PASSIVE MOBS
     BAT:
+      - drop: {DIAMOND_ORE/10%, DIAMOND/10%, EMERALD_ORE/10%, EMERALD/10%, GOLD_ORE/10%}
 
     CHICKEN:
+      - trigger: MOBSPAWN
+        drop: {GIANT/0.5%, CREEPER@POWERED/0.5%, BLAZE/0.5%, BAT/0.5%, WITCH/0.5%, ENDERMAN@DIAMOND_ORE/1%}
+        flag: UNIQUE
 
     COW:
 
@@ -102,12 +114,18 @@ otherdrops:
     OCELOT:
 
     PIG:
+      - trigger: MOBSPAWN
+        drop: {GIANT/0.5%, CREEPER@POWERED/0.5%, BLAZE/0.5%, BAT/0.5%, WITCH/0.5%, ENDERMAN@DIAMOND_ORE/1%}
+        flag: UNIQUE
 
     PIG@SADDLED:
 
     RABBIT:
  
     SHEEP:
+      - trigger: MOBSPAWN
+        drop: {GIANT/0.5%, CREEPER@POWERED/0.5%, BLAZE/0.5%, BAT/0.5%, WITCH/0.5%, ENDERMAN@DIAMOND_ORE/1%}
+        flag: UNIQUE
 
     SQUID:
 
@@ -134,9 +152,12 @@ otherdrops:
     WOLF@TAMED:
 
     PIG_ZOMBIE:
+      - trigger: MOBSPAWN
+        drop: {GIANT/7%, CREEPER@POWERED/7%, BLAZE/17%, BAT/3%, WITCH/5%, ENDERMAN@DIAMOND_ORE/2.5%}
+        flag: UNIQUE
 
-#ORES Ores are set so that they cannot keep mining same ore for money.
-#AND ORES HAVE A SMALL CHANCE TO DROP THE ORE_BLOCK FOR FUN.
+#ORES, Ores are set so that they cannot keep mining same ore for money.
+#AND ORES HAVE A SMALL CHANCE TO DROP THE ORE_BLOCK FOR FUN. (STILL CAN MINE THAT AGAIN THOUGH)
 
     COAL_ORE:
       - drop: COAL_ORE/10%
@@ -182,7 +203,7 @@ otherdrops:
 
     LEAVES:
       - trigger: LEAF_DECAY
-        drop: [XP/5%, APPLE/1%]
+        drop: {XP/5%, APPLE/1%, 322/0.01%}
 
     MOB_SPAWNER:
       - drop: DIAMOND_ORE
